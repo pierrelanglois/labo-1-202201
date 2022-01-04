@@ -206,7 +206,7 @@ Toutes les commmandes vous sont fournies dans le fichier `labo-1-synth-impl.tcl`
 
 En général, il n'est pas nécessaire de refaire toutes les étapes précédentes quand une étape ne fonctionne pas. On peut en général ne refaire que l'étape qui a flanché.
 
-## Partie 2 : amélioration du module pour cinq entrées
+## Partie 2 : Amélioration du module pour cinq entrées
 
 Modifiez le module demo_combinatoire pour qu'il fonctionne avec une valeur de W = 5. Répétez toutes les étapes du flot de conception. Nommez votre fichier "demo_combinatoire_ameliore.vhd".
 

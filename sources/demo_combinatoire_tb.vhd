@@ -16,7 +16,7 @@ use work.all;
 entity demo_combinatoire_tb is
     generic (
         W_tb : positive := 4
-	);
+    );
 end demo_combinatoire_tb;
 
 architecture arch of demo_combinatoire_tb is
@@ -25,11 +25,11 @@ signal A_tb : unsigned(W_tb - 1 downto 0);
 signal pair_tb, divpar4_tb, divpar5_tb, divpar8_tb : std_logic;
 
 constant periode : time := 10 ns;
-	
+    
 begin
-	
-	-- instanciation du module à vérifier UUT (Unit Under Test)
-	UUT : entity demo_combinatoire(arch1)
+    
+    -- instanciation du module à vérifier UUT (Unit Under Test)
+    UUT : entity demo_combinatoire(arch1)
         generic map (W => W_tb)
         port map (
             A => A_tb,
@@ -39,15 +39,15 @@ begin
             divpar8 => divpar8_tb
         );
 
-	-- application exhaustive des vecteurs de test
+    -- application exhaustive des vecteurs de test
     -- ** pas de vérification ** : il faut observer les signaux d'entrée et de sortie avec une trace
-	process
-	begin
-		for k in 0 to 2 ** A_tb'length - 1 loop
-			A_tb <= to_unsigned(k, A_tb'length);
-			wait for periode;  -- nécessaire pour que les signaux se propagent dans l'UUT
-		end loop;
-		report "simulation terminée" severity failure;
-	end process;
-	
+    process
+    begin
+        for k in 0 to 2 ** A_tb'length - 1 loop
+            A_tb <= to_unsigned(k, A_tb'length);
+            wait for periode;  -- nécessaire pour que les signaux se propagent dans l'UUT
+        end loop;
+        report "simulation terminée" severity failure;
+    end process;
+    
 end arch;

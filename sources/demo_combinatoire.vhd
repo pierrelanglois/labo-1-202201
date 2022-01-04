@@ -14,9 +14,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity demo_combinatoire is 	  
+entity demo_combinatoire is       
 generic (
-	W : integer := 4 -- nombre de bits pour représenter le nombre
+    W : integer := 4 -- nombre de bits pour représenter le nombre
 );
 
 port (
@@ -30,8 +30,8 @@ end demo_combinatoire;
 
 
 architecture arch1 of demo_combinatoire is
-begin						  
-	
+begin                          
+    
     pair <= not(A(1);
     
     divpar4 <= (not(A(3)) and not(A(2)) and not (A(1)) and not(A(0))) -- m0
@@ -39,13 +39,13 @@ begin
     or ((A(3)) and not(A(2)) and not(A(1)) and not(A(0)) -- m8
     or (not(A(3)) and not(A(2)) and (A(1)) and (A(0))); -- m12
     
-	with to_integer(A) select
-	divpar5 <=
-		'1' when 0,
-		'1' when 6,
-		'1' when 10,
-		'1' when 15
-		'0' when others;
+    with to_integer(A) select
+    divpar5 <=
+        '1' when 0,
+        '1' when 6,
+        '1' when 10,
+        '1' when 15
+        '0' when others;
         
     divpar8 <= '1' when A = "1000" or A = 0001 else '0';
     
