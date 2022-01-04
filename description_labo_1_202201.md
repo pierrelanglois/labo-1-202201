@@ -84,7 +84,7 @@ Pour de l'aide concernant l'utilisation de Active-HDL, vous pouvez suivre [le tu
 
 ### c. Correction des erreurs de syntaxe
 
-Le fichier `demo_combinatoire.vhd` comporte cinq erreurs de syntaxe. Pour vous aider à les trouver, dans Active-HDL faites `Design > Compile` ou pressez la touche F11. Attention, il est important de spécifier la bonne version de VHDL à utiliser par le compilateur, avec [Design > Settings > Compilation > VHDL Compiler > Language Specificatio > Standard version : VHDL 1076-2008](figures/Active-HDL-VHDL-compiler.jpg). On peut aussi effectuer la compilation directement dans la console de Active-HDL avec la commande :
+Le fichier `demo_combinatoire.vhd` comporte cinq erreurs de syntaxe. Pour vous aider à les trouver, dans Active-HDL faites `Design > Compile` ou pressez la touche F11. Attention, il est important de spécifier la bonne version de VHDL à utiliser par le compilateur, avec [Design > Settings > Compilation > VHDL Compiler > Language Specification > Standard version : VHDL 1076-2008](figures/Active-HDL-VHDL-compiler.jpg). On peut aussi effectuer la compilation directement dans la console de Active-HDL avec la commande :
 
 `acom -2008 votre-chemin\inf3500\labo1\demo_combinatoire.vhd`
 
@@ -141,7 +141,7 @@ synth_design -top top_labo_1 -part xc7a35tcpg236-1 -assert
 
 On remarque que :
 
-* `top_labo_1.vhd` est un fichier de code VHDL falicitant l'interface entre le module demo_combinatoire et les interfaces physiques sur la carte - il sert uniquement à renommer les ports ici;
+* `top_labo_1.vhd` est un fichier de code VHDL facilitant l'interface entre le module demo_combinatoire et les interfaces physiques sur la carte - il sert uniquement à renommer les ports ici;
 * `demo_combinatoire.vhd` est un fichier de code VHDL décrivant le module à synthétiser;
 * le commutateur -vhdl2008 spécifie quelle version de VHDL utiliser;
 * les fichiers `*.xdc` sont des fichiers de texte contenant les contraintes d'implémentation, entre autres l'assignation des pattes du FPGA à des signaux du module VHDL top_labo_1;
@@ -178,7 +178,7 @@ connect_hw_server
 get_hw_targets
 open_hw_target
 
-# puis choisir les trois lignes qui correpondent à votre carte
+# puis choisir les trois lignes qui correspondant à votre carte
 current_hw_device [get_hw_devices xc7a35t_0]
 set_property PROGRAM.FILE {top_labo_1.bit} [get_hw_devices xc7a35t_0]
 program_hw_devices [get_hw_devices xc7a35t_0]
@@ -202,7 +202,7 @@ Si le comportement n'est pas conforme aux spécifications ... il faut alors reto
 
 ### j. Toutes les commandes en un seul script
 
-Toutes les commmandes vous sont fournies dans le fichier `labo-1-synth-impl.tcl` que vous pouvez éditer à votre guise.
+Toutes les commandes vous sont fournies dans le fichier `labo-1-synth-impl.tcl` que vous pouvez éditer à votre guise.
 
 En général, il n'est pas nécessaire de refaire toutes les étapes précédentes quand une étape ne fonctionne pas. On peut en général ne refaire que l'étape qui a flanché.
 
